@@ -4,7 +4,7 @@ requires = [""]
 
 setup(
     name='lgsvl_tools',
-    version='0.1.1',
+    version='0.1.2',
     description='Command Line Tools for LGSVL Simulator',
     url='https://github.com/tier4/lgsvl_tools.git',
     author='Masaya Kataoka',
@@ -20,7 +20,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "urdf_generator = lgsvl_tools.urdf_generator:main"
+            "lgsvl_tools_urdf_generator = lgsvl_tools.urdf_generator:main"
         ]
     }
 )
