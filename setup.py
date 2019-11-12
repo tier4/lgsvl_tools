@@ -18,4 +18,9 @@ setup(
     classifiers=[
         'Programming Language :: Python :: 3.6',
     ],
+    entry_points={
+        "console_scripts": [
+            "urdf_generator = lgsvl_tools.urdf_generator:main"
+        ]
+    }
 )

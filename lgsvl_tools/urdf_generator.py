@@ -113,7 +113,7 @@ class UrdfGenerator:
         urdf_string = self.reshape_urdf(urdf)
         self.output_urdf(urdf_string)
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description='URDF generation tool for LGSVL Simulator')
     parser.add_argument('json_path', help='json_file_path for the LGSVL simulator vehicle configuration')
     parser.add_argument('output_file', help='output_path of the URDF')
@@ -124,3 +124,6 @@ if __name__ == "__main__":
     parser.add_argument('dae_path',help='path of the .dae files')
     args = parser.parse_args()
     generator = UrdfGenerator(args.json_path,args.output_file,args.base_link_offset_x,args.base_link_offset_y,args.base_link_offset_z,args.robot_name,args.dae_path)
+
+if __name__ == "__main__":
+    main()
