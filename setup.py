@@ -4,7 +4,7 @@ requires = [""]
 
 setup(
     name='lgsvl_tools',
-    version='0.1.2',
+    version='0.1.3',
     description='Command Line Tools for LGSVL Simulator',
     url='https://github.com/tier4/lgsvl_tools.git',
     author='Masaya Kataoka',
