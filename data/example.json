@@ -29,7 +29,7 @@
   },
   {
     "type": "Lidar",
-    "name": "Lidar",
+    "name": "Front Lidar",
     "params": {
       "LaserCount": 32,
       "MinDistance": 0.5,
@@ -40,16 +40,66 @@
       "CenterAngle": 10,
       "Compensated": true,
       "PointColor": "#ff000000",
-      "Topic": "/points_raw",
-      "Frame": "velodyne"
+      "Topic": "/front_velodyne/points_raw",
+      "Frame": "front_velodyne"
     },
     "transform": {
       "x": 0,
       "y": 2.312,
-      "z": -0.3679201,
+      "z": 0.0,
       "pitch": 0,
       "yaw": 0,
       "roll": 0
+    }
+  },
+  {
+    "type": "Lidar",
+    "name": "Left Lidar",
+    "params": {
+      "LaserCount": 16,
+      "MinDistance": 0.5,
+      "MaxDistance": 100,
+      "RotationFrequency": 10,
+      "MeasurementsPerRotation": 360,
+      "FieldOfView": 41.33,
+      "CenterAngle": 10,
+      "Compensated": true,
+      "PointColor": "#ff000000",
+      "Topic": "/left_velodyne/points_raw",
+      "Frame": "left_velodyne"
+    },
+    "transform": {
+      "x": -0.75,
+      "y": 2.312,
+      "z": 0.0,
+      "pitch": 0,
+      "yaw": 0,
+      "roll": 45
+    }
+  },
+  {
+    "type": "Lidar",
+    "name": "Right Lidar",
+    "params": {
+      "LaserCount": 16,
+      "MinDistance": 0.5,
+      "MaxDistance": 100,
+      "RotationFrequency": 10,
+      "MeasurementsPerRotation": 360,
+      "FieldOfView": 41.33,
+      "CenterAngle": 10,
+      "Compensated": true,
+      "PointColor": "#ff000000",
+      "Topic": "/right_velodyne/points_raw",
+      "Frame": "right_velodyne"
+    },
+    "transform": {
+      "x": 0.75,
+      "y": 2.312,
+      "z": 0.0,
+      "pitch": 0,
+      "yaw": 0,
+      "roll": -45
     }
   },
   {
