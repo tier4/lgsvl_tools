@@ -2,7 +2,6 @@ import argparse
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 from xml.dom import minidom
 import json
-from pyquaternion import Quaternion
 
 CAMERA_SENSOR_TYPES = ['Color Camera']
 SENSOR_TYPES = ['GPS Device','GPS Odometry','IMU','Lidar','Color Camera']

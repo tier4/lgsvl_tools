@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<robot name="lexus">
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.0-0.0 -0.0"/>
+      <geometry>
+        <mesh filename="package://minimum_visual_robot/meshes/DAE/base/lexus.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gps_link"/>
+  <joint name="gps_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <link name="velodyne_link"/>
+  <joint name="velodyne_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="velodyne"/>
+    <origin rpy="0 0 0" xyz="-0.3679201 0.0 2.312"/>
+  </joint>
+  <link name="front_camera_link"/>
+  <joint name="front_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_camera"/>
+    <origin rpy="0 0 0" xyz="-0.2 0.0 1.7"/>
+  </joint>
+  <link name="front_camera_optical_link"/>
+  <joint name="front_camera_optical_joint" type="fixed">
+    <parent link="front_camera"/>
+    <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0 0 0"/>
+  </joint>
+  <link name="left_camera_link"/>
+  <joint name="left_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_camera"/>
+    <origin rpy="0 0 0" xyz="-0.2 -1.0 1.7"/>
+  </joint>
+  <link name="left_camera_optical_link"/>
+  <joint name="left_camera_optical_joint" type="fixed">
+    <parent link="left_camera"/>
+    <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0 0 0"/>
+  </joint>
+  <link name="right_camera_link"/>
+  <joint name="right_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_camera"/>
+    <origin rpy="0 0 0" xyz="-0.2 1.0 1.7"/>
+  </joint>
+  <link name="right_camera_optical_link"/>
+  <joint name="right_camera_optical_joint" type="fixed">
+    <parent link="right_camera"/>
+    <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0 0 0"/>
+  </joint>
+</robot>
