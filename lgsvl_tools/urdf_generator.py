@@ -94,6 +94,8 @@ class UrdfGenerator:
         optical_joint.set('type','fixed')
         parent = SubElement(optical_joint,'parent')
         parent.set('link',frame_id)
+        child = SubElement(optical_joint,'child')
+        child.set('link',frame_id+"_optical_link")
         origin = SubElement(optical_joint,'origin')
         origin.set('rpy', "-1.57079632679 0 -1.57079632679")
         origin.set('xyz', "0 0 0")
