@@ -60,7 +60,7 @@ class UrdfGenerator:
         base_link.set('name','base_link')
         base_link_visual = SubElement(base_link,'visual')
         origin = SubElement(base_link_visual,'origin')
-        xyz_str = str(self.base_link_offset_z*-1) + "" + str(self.base_link_offset_x*-1) + " " + str(self.base_link_offset_y*-1)
+        xyz_str = str(self.base_link_offset_z*-1) + " " + str(self.base_link_offset_x*-1) + " " + str(self.base_link_offset_y*-1)
         origin.set('rpy', "0 0 0")
         origin.set('xyz', xyz_str)
         base_link_geometry = SubElement(base_link_visual,'geometry')
