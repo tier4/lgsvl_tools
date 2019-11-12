@@ -79,7 +79,7 @@ class UrdfGenerator:
         parent = SubElement(joint,'parent')
         parent.set('link','base_link')
         child = SubElement(joint,'child')
-        child.set('link',frame_id)
+        child.set('link',frame_id+'_link')
         origin = SubElement(joint,'origin')
         rpy_str = str(transform["yaw"]) + " " + str(transform["roll"]) + " " + str(transform["pitch"])
         origin.set('rpy', rpy_str)
