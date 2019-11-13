@@ -61,8 +61,9 @@ class UrdfGenerator:
         base_link.set('name','base_link')
         base_link_visual = SubElement(base_link,'visual')
         origin = SubElement(base_link_visual,'origin')
-        origin.set('rpy', "1.57079632679 0 1.57079632679")
-        origin.set('xyz', "0 0 0")
+        origin.set('rpy', "0 0 1.57079632679")
+        xyz_str = str(self.base_link_offset_x) + " " + str(self.base_link_offset_y) + " " + str(self.base_link_offset_z)
+        origin.set('xyz', xyz_str)
         base_link_geometry = SubElement(base_link_visual,'geometry')
         base_link_mesh = SubElement(base_link_geometry,'mesh')
         base_link_mesh.set('filename',self.dae_path)
@@ -83,7 +84,7 @@ class UrdfGenerator:
         origin = SubElement(joint,'origin')
         rpy_str = str(transform["roll"]/180.0*math.pi) + " " + str(-1*transform["pitch"]/180.0*math.pi) + " " + str(transform["yaw"]/180.0*math.pi)
         origin.set('rpy', rpy_str)
-        xyz_str = str(transform["z"]) + " " + str(-1*transform["x"]) + " " + str(transform["y"])
+        xyz_str = str(transform["z"]+self.base_link_offset_x) + " " + str(-1*(transform["x"]+self.base_link_offset_y)) + " " + str((transform["y"]+self.base_link_offset_z))
         origin.set('xyz', xyz_str)
         return urdf
     def add_optical_frame(self,urdf,frame_id):
